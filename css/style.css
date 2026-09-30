@@ -1,0 +1,2037 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --gold: #b99a6a;
+    --gold-light: #d5bc91;
+
+}
+
+
+/* ================= BODY ================= */
+
+body {
+
+    background: #080706;
+
+    color: var(--gold-light);
+
+    font-family: "Cinzel", serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* ================= OPENING ================= */
+
+.opening {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 720px;
+
+    overflow: hidden;
+
+
+    /* IMAGE ONLY */
+
+    background-image: url("../assets/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+/* No extra background */
+
+.opening::before {
+
+    display: none;
+
+}
+
+
+/* ================= TOP LEFT ================= */
+
+.mission-label {
+
+    position: absolute;
+
+    top: 35px;
+
+    left: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--gold-light);
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+
+    z-index: 20;
+
+}
+
+
+.mission-label small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 6px;
+
+    opacity: 0.65;
+
+}
+
+
+/* ================= SYMBOL ================= */
+
+.wing-symbol {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wing-symbol img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ================= MUSIC ================= */
+
+.music-button {
+
+    position: absolute;
+
+    top: 30px;
+
+    right: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    background: none;
+
+    border: none;
+
+    color: var(--gold-light);
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    letter-spacing: 4px;
+
+    z-index: 20;
+
+}
+
+
+.music-button span {
+
+    width: 43px;
+
+    height: 43px;
+
+    border: 1px solid rgba(200, 170, 120, 0.5);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 19px;
+
+}
+
+
+/* ================= MAIN CONTENT ================= */
+
+.mission-content {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(650px, 90%);
+
+    text-align: center;
+
+    z-index: 15;
+
+}
+
+
+/* ================= WINGS ================= */
+
+.wings {
+
+    position: relative;
+
+    width: 90px;
+
+    height: 100px;
+
+    margin: auto;
+
+    opacity: 0.85;
+
+}
+
+
+.shield {
+    position: absolute;
+
+    width: 80px;
+    height: 100px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+
+    filter:
+        brightness(0.85)
+        contrast(1.2)
+        sepia(0.15);
+
+    transition: 0.3s ease;
+}
+
+.shield img:hover {
+    transform: scale(1.08);
+}
+
+
+
+
+
+
+/* ================= TITLE ================= */
+
+.title-line {
+
+    width: 110px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 12px auto;
+
+}
+
+
+.mission-content h1 {
+
+    font-size: clamp(32px, 5vw, 55px);
+
+    letter-spacing: 10px;
+
+    font-weight: 500;
+
+    color: #cdb28b;
+
+}
+
+
+.mission-content h2 {
+
+    font-size: clamp(25px, 4vw, 45px);
+
+    letter-spacing: 9px;
+
+    font-weight: 400;
+
+    margin-top: 7px;
+
+}
+
+
+/* ================= INSTRUCTION ================= */
+
+.instruction {
+
+    margin-top: 38px;
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+
+    letter-spacing: 6px;
+
+}
+
+
+/* ================= CODE ================= */
+
+.code-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.code-box {
+
+    width: 58px;
+
+    height: 72px;
+
+    background: rgba(15, 12, 9, 0.65);
+
+    border: 1px solid rgba(205, 178, 137, 0.65);
+
+    color: #e2c99e;
+
+    text-align: center;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 25px;
+
+    outline: none;
+
+}
+
+
+.code-box:focus {
+
+    border-color: #e4c48d;
+
+    box-shadow:
+        0 0 15px rgba(214, 175, 105, 0.2);
+
+}
+
+
+/* ================= CONFIRM ================= */
+
+.confirm-button {
+
+    width: 205px;
+
+    height: 50px;
+
+    background: rgba(15, 12, 9, 0.8);
+
+    border: 1px solid rgba(205, 178, 137, 0.7);
+
+    color: var(--gold-light);
+
+    font-family: inherit;
+
+    letter-spacing: 6px;
+
+    cursor: pointer;
+
+}
+
+
+.confirm-button:hover {
+
+    background: rgba(175, 137, 82, 0.15);
+
+}
+
+
+/* ================= WRONG / SUCCESS ================= */
+
+.wrong-message,
+.success-message {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 330px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.wrong-message {
+
+    top: 390px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    color: #bd665d;
+
+}
+
+
+.wrong-message strong {
+
+    font-size: 25px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.wrong-message span {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.wrong-message small {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.success-message {
+
+    top: 390px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    color: #9fc29e;
+
+}
+
+
+.success-message span {
+
+    font-size: 25px;
+
+}
+
+
+.success-message strong {
+
+    letter-spacing: 5px;
+
+    font-size: 20px;
+
+}
+
+
+.success-message small {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* ================= LEVI ================= */
+
+.levi-area {
+
+    position: absolute;
+
+    left: 9%;
+
+    bottom: 19%;
+
+    width: 270px;
+
+    z-index: 30;
+
+}
+
+
+.levi-wrapper {
+
+    position: relative;
+
+    width: 220px;
+
+    animation: leviIdle 3.5s ease-in-out infinite;
+
+}
+
+
+.levi-image {
+
+    width: 220px;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    object-position: center 25%;
+
+    display: block;
+
+    filter:
+        sepia(15%)
+        brightness(0.72)
+        contrast(1.15);
+
+    mask-image: linear-gradient(
+
+        to bottom,
+
+        black 80%,
+
+        transparent 100%
+
+    );
+
+}
+
+
+@keyframes leviIdle {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-6px);
+
+    }
+
+}
+
+
+/* ================= LEVI SPEECH ================= */
+
+.levi-caption {
+
+    position: absolute;
+
+    right: -105px;
+
+    top: 30px;
+
+    padding: 13px 20px;
+
+    background: rgba(10, 9, 7, 0.92);
+
+    border: 1px solid rgba(200, 175, 140, 0.6);
+
+    border-radius: 30px;
+
+    color: #d5c3a5;
+
+    font-family: "IM Fell English", serif;
+
+    font-style: italic;
+
+    font-size: 16px;
+
+    white-space: nowrap;
+
+}
+
+
+.levi-caption::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -12px;
+
+    top: 15px;
+
+    width: 20px;
+
+    height: 20px;
+
+    background: rgba(10, 9, 7, 0.92);
+
+    border-left: 1px solid rgba(200, 175, 140, 0.6);
+
+    border-bottom: 1px solid rgba(200, 175, 140, 0.6);
+
+    transform: rotate(45deg);
+
+}
+
+
+/* ================= ANGRY ================= */
+
+.levi-area.angry {
+
+    animation: angryLevi 0.5s ease;
+
+}
+
+
+@keyframes angryLevi {
+
+    0% {
+        transform: translateX(0) rotate(0);
+    }
+
+    20% {
+        transform: translateX(-12px) rotate(-3deg);
+    }
+
+    40% {
+        transform: translateX(12px) rotate(3deg);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ================= PAPER ================= */
+
+.paper-note {
+
+    position: absolute;
+
+    z-index: 12;
+
+    width: 145px;
+
+    padding: 25px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4d3828,
+            #281d15
+        );
+
+    border: 1px solid rgba(150, 115, 75, 0.4);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4);
+
+    color: #bca27e;
+
+    font-family: "IM Fell English", serif;
+
+    font-size: 18px;
+
+    line-height: 1.25;
+
+}
+
+
+.left-note {
+
+    left: 2.5%;
+
+    top: 21%;
+
+    transform: rotate(-3deg);
+
+}
+
+
+.right-note {
+
+    right: 3%;
+
+    top: 25%;
+
+    transform: rotate(2deg);
+
+    width: 175px;
+
+}
+
+
+.paper-note span {
+
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    text-align: right;
+
+}
+
+
+/* ================= BOTTOM ================= */
+
+.bottom-left {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 35px;
+
+    z-index: 20;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.bottom-right {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    right: 35px;
+
+    z-index: 20;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.heartbeat {
+
+    font-size: 22px;
+
+    margin-right: 10px;
+
+}
+
+
+/* ================= WRONG SCREEN ================= */
+
+.opening.wrong {
+
+    animation: screenShake 0.45s ease;
+
+}
+
+
+.opening.wrong .code-box {
+
+    border-color: #963f37;
+
+    color: #d36960;
+
+}
+
+
+.opening.wrong .wrong-message {
+
+    opacity: 1;
+
+}
+
+
+.opening.wrong .levi-caption {
+
+    color: #d47c72;
+
+    border-color: #963f37;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+@keyframes screenShake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(8px);
+    }
+
+    60% {
+        transform: translateX(-6px);
+    }
+
+    80% {
+        transform: translateX(6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ================= SUCCESS ================= */
+
+.opening.success .success-message {
+
+    opacity: 1;
+
+}
+
+
+.opening.success .mission-content > *:not(.success-message) {
+
+    opacity: 0.35;
+
+}
+
+
+.opening.success .levi-image {
+
+    filter:
+        sepia(10%)
+        brightness(1)
+        contrast(1.1);
+
+}
+
+
+/* ================= BIRTHDAY PAGE ================= */
+
+/* =====================================
+   BIRTHDAY PAGE
+===================================== */
+
+.birthday-page {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s,
+        transform 1.2s ease;
+
+
+    /* BACKGROUND */
+
+    background-image: url("../assets/Gemini_Generated_Image_k2k427k2k427k2k4.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+
+}
+
+
+/* =====================================
+   SHOW
+===================================== */
+
+.birthday-page.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+/* =====================================
+   BACKGROUND TEXTURE
+===================================== */
+
+.birthday-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    background-image:
+
+        linear-gradient(
+            rgba(220, 195, 150, 0.1) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(220, 195, 150, 0.1) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+}
+
+
+/* =====================================
+   TOP LABEL
+===================================== */
+
+.birthday-top {
+
+    position: absolute;
+
+    top: 28px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    color: #cdb98f;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    white-space: nowrap;
+
+    opacity: 0.85;
+
+}
+
+
+.tiny-wing {
+
+    font-size: 16px;
+
+    color: #d7c29a;
+
+}
+
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+.birthday-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(850px, 92%);
+
+    margin-top: 20px;
+
+}
+
+
+/* =====================================
+   MISSION COMPLETE
+===================================== */
+
+.mission-complete {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.mission-complete p {
+
+    margin: 0;
+
+    color: #c6ae80;
+
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+}
+
+
+.mission-complete .line {
+
+    width: 45px;
+
+    height: 1px;
+
+    background: #b99a6a;
+
+    opacity: 0.7;
+
+}
+
+
+/* =====================================
+   TITLE
+===================================== */
+
+.birthday-content h1 {
+
+    margin: 0;
+
+    color: #e0c99d;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(38px, 6vw, 72px);
+
+    line-height: 0.95;
+
+    letter-spacing: 8px;
+
+    font-weight: 500;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.birthday-content h1 span {
+
+    font-size: 0.7em;
+
+    letter-spacing: 13px;
+
+    color: #d1b985;
+
+}
+
+
+/* =====================================
+   ANAS
+===================================== */
+
+.birthday-content h2 {
+
+    margin: 10px 0 0;
+
+    color: #f0d7a5;
+
+    font-family: "IM Fell English", serif;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    font-style: italic;
+
+    letter-spacing: 12px;
+
+    font-weight: 400;
+
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* =====================================
+   IMAGE
+===================================== */
+
+.birthday-image-wrapper {
+
+    position: relative;
+
+    width: min(600px, 75vw);
+
+    height: min(300px, 32vw);
+
+    margin: -5px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.birthday-image {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    animation: birthdayFloat 4s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45));
+
+}
+
+
+@keyframes birthdayFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-0.5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(0.5deg);
+
+    }
+
+}
+
+
+/* =====================================
+   IMAGE GLOW
+===================================== */
+
+.image-glow {
+
+    position: absolute;
+
+    width: 70%;
+
+    height: 50%;
+
+    left: 15%;
+
+    top: 30%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(207, 171, 105, 0.18);
+
+    filter: blur(40px);
+
+    z-index: 1;
+
+    animation: glowPulse 3s ease-in-out infinite;
+
+}
+
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.5;
+
+        transform: scale(0.9);
+
+    }
+
+    50% {
+
+        opacity: 0.9;
+
+        transform: scale(1.05);
+
+    }
+
+}
+
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+.birthday-message {
+
+    position: relative;
+
+    width: min(480px, 85%);
+
+    margin: -8px auto 0;
+
+    padding: 14px 35px;
+
+    color: #d7c5a4;
+
+    font-family: "IM Fell English", serif;
+
+    background:
+        rgba(8, 12, 10, 0.38);
+
+    border-top: 1px solid rgba(190, 159, 106, 0.35);
+
+    border-bottom: 1px solid rgba(190, 159, 106, 0.35);
+
+}
+
+
+.birthday-message p {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+}
+
+
+.birthday-message small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #b99a6a;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.quote-mark {
+
+    position: absolute;
+
+    left: 8px;
+
+    top: 0;
+
+    color: #b99a6a;
+
+    font-size: 35px;
+
+    opacity: 0.6;
+
+}
+
+
+.quote-right {
+
+    left: auto;
+
+    right: 8px;
+
+    top: auto;
+
+    bottom: -10px;
+
+}
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.next-mission-button {
+
+    margin-top: 22px;
+
+    padding: 13px 27px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border: 1px solid rgba(203, 176, 132, 0.7);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(75, 61, 42, 0.55),
+            rgba(12, 16, 13, 0.7)
+        );
+
+    color: #d8c49a;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+
+}
+
+
+.next-mission-button span {
+
+    color: #c6a76f;
+
+}
+
+
+.next-mission-button:hover {
+
+    transform: translateY(-3px);
+
+    background:
+        rgba(190, 153, 94, 0.15);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* =====================================
+   STARS
+===================================== */
+
+.party-decoration {
+
+    position: absolute;
+
+    z-index: 2;
+
+    color: #d9bd83;
+
+    font-size: 25px;
+
+    opacity: 0.75;
+
+    animation: starFloat 3s ease-in-out infinite;
+
+}
+
+
+.decor-1 {
+
+    left: 10%;
+
+    top: 18%;
+
+    font-size: 35px;
+
+}
+
+
+.decor-2 {
+
+    left: 5%;
+
+    bottom: 25%;
+
+    animation-delay: 1s;
+
+}
+
+
+.decor-3 {
+
+    right: 10%;
+
+    top: 25%;
+
+    font-size: 35px;
+
+    animation-delay: 0.5s;
+
+}
+
+
+.decor-4 {
+
+    right: 5%;
+
+    bottom: 22%;
+
+    animation-delay: 1.5s;
+
+}
+
+
+.decor-5 {
+
+    left: 25%;
+
+    top: 10%;
+
+    font-size: 18px;
+
+    animation-delay: 0.8s;
+
+}
+
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(15deg);
+
+    }
+
+}
+
+
+/* =====================================
+   BALLOONS
+===================================== */
+
+.balloon {
+
+    position: absolute;
+
+    width: 52px;
+
+    height: 65px;
+
+    border-radius:
+        50% 50% 48% 48%;
+
+    opacity: 0.7;
+
+    z-index: 2;
+
+}
+
+
+.balloon::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -55px;
+
+    width: 1px;
+
+    height: 55px;
+
+    background: rgba(208, 185, 142, 0.45);
+
+}
+
+
+.balloon::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -4px;
+
+    transform: translateX(-50%);
+
+    width: 7px;
+
+    height: 7px;
+
+    background: inherit;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+}
+
+
+/* different balloons */
+
+.balloon-1 {
+
+    left: 3%;
+
+    top: 10%;
+
+    background: #78624a;
+
+    transform: rotate(-10deg);
+
+}
+
+
+.balloon-2 {
+
+    left: 13%;
+
+    top: 5%;
+
+    width: 42px;
+
+    height: 55px;
+
+    background: #a48c62;
+
+    transform: rotate(8deg);
+
+}
+
+
+.balloon-3 {
+
+    right: 5%;
+
+    top: 9%;
+
+    background: #425b4d;
+
+    transform: rotate(8deg);
+
+}
+
+
+.balloon-4 {
+
+    right: 15%;
+
+    top: 4%;
+
+    width: 43px;
+
+    height: 56px;
+
+    background: #80674a;
+
+    transform: rotate(-8deg);
+
+}
+
+
+.balloon-5 {
+
+    right: 3%;
+
+    bottom: 18%;
+
+    width: 38px;
+
+    height: 50px;
+
+    background: #65705b;
+
+    transform: rotate(7deg);
+
+}
+
+
+/* =====================================
+   RIBBONS
+===================================== */
+
+.ribbon {
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 25px;
+
+    border: 1px solid rgba(201, 173, 126, 0.4);
+
+    z-index: 1;
+
+    opacity: 0.45;
+
+}
+
+
+.ribbon-left {
+
+    left: -20px;
+
+    top: 45%;
+
+    transform:
+        rotate(-35deg)
+        skewX(-20deg);
+
+}
+
+
+.ribbon-right {
+
+    right: -20px;
+
+    top: 48%;
+
+    transform:
+        rotate(35deg)
+        skewX(20deg);
+
+}
+
+
+/* =====================================
+   BOTTOM
+===================================== */
+
+.birthday-bottom {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    white-space: nowrap;
+
+    color: rgba(204, 182, 145, 0.6);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.bottom-dot {
+
+    color: #b99a6a;
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .birthday-top {
+
+        top: 20px;
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+
+        gap: 8px;
+
+    }
+
+
+    .birthday-content {
+
+        margin-top: 10px;
+
+    }
+
+
+    .mission-complete p {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .birthday-content h1 {
+
+        font-size: 35px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .birthday-content h1 span {
+
+        letter-spacing: 7px;
+
+    }
+
+
+    .birthday-content h2 {
+
+        font-size: 35px;
+
+        letter-spacing: 8px;
+
+    }
+
+
+    .birthday-image-wrapper {
+
+        width: 90vw;
+
+        height: 210px;
+
+        margin-top: 0;
+
+    }
+
+
+    .birthday-message {
+
+        padding: 10px 25px;
+
+    }
+
+
+    .birthday-message p {
+
+        font-size: 15px;
+
+    }
+
+
+    .next-mission-button {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+        padding: 12px 18px;
+
+    }
+
+
+    .balloon {
+
+        transform: scale(0.65);
+
+    }
+
+
+    .decor-1 {
+
+        left: 3%;
+
+    }
+
+
+    .decor-3 {
+
+        right: 3%;
+
+    }
+
+
+    .birthday-bottom {
+
+        font-size: 6px;
+
+        letter-spacing: 1px;
+
+        gap: 5px;
+
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .opening {
+
+        min-height: 750px;
+
+        background-position: center;
+
+    }
+
+
+    .mission-label {
+
+        left: 18px;
+
+        top: 20px;
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .mission-label small {
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .music-button {
+
+        right: 18px;
+
+        top: 20px;
+
+    }
+
+
+    .music-button label {
+
+        display: none;
+
+    }
+
+
+    .mission-content {
+
+        top: 42%;
+
+    }
+
+
+    .mission-content h1 {
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .mission-content h2 {
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .instruction {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .code-container {
+
+        gap: 5px;
+
+    }
+
+
+    .code-box {
+
+        width: 38px;
+
+        height: 55px;
+
+        font-size: 18px;
+
+    }
+
+
+    .levi-area {
+
+        left: 50%;
+
+        bottom: 0;
+
+        transform: translateX(-50%);
+
+        width: 160px;
+
+    }
+
+
+    .levi-wrapper {
+
+        width: 150px;
+
+    }
+
+
+    .levi-image {
+
+        width: 150px;
+
+        height: 170px;
+
+    }
+
+
+    .levi-caption {
+
+        right: -85px;
+
+        top: 10px;
+
+        font-size: 12px;
+
+        padding: 9px 13px;
+
+    }
+
+
+    .paper-note {
+
+        display: none;
+
+    }
+
+
+    .bottom-left {
+
+        display: none;
+
+    }
+
+
+    .bottom-right {
+
+        right: 15px;
+
+        font-size: 7px;
+
+    }
+
+}
+

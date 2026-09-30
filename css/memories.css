@@ -1,0 +1,3190 @@
+/* =====================================================
+   ANAS — MEMORIES + PERSONAL LETTER
+   OLD ALBUM / PARCHMENT EDITION
+===================================================== */
+
+:root {
+
+    --paper: #eee4ce;
+    --paper-light: #f7f0df;
+    --paper-dark: #d7c7a8;
+
+    --ink: #30291f;
+    --ink-soft: #625744;
+
+    --brown: #755d3d;
+    --brown-dark: #443522;
+
+    --green: #58634e;
+    --green-dark: #343d30;
+
+    --gold: #ad8750;
+
+    --red: #813f35;
+
+    --shadow: rgba(45, 35, 20, 0.20);
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255,255,255,.45),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(120,90,50,.12),
+            transparent 35%
+        ),
+        var(--paper);
+
+    color: var(--ink);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =====================================================
+   PAPER TEXTURE
+===================================================== */
+
+.paper-noise {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    opacity: .20;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(80,60,35,.035) 0px,
+            rgba(80,60,35,.035) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    mix-blend-mode: multiply;
+
+}
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.floating-particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+}
+
+.floating-particles span {
+
+    position: absolute;
+
+    color: var(--gold);
+
+    opacity: .28;
+
+    font-size: 20px;
+
+    animation: floatParticle 12s infinite ease-in-out;
+
+}
+
+.floating-particles span:nth-child(1) {
+    left: 10%;
+    top: 20%;
+}
+
+.floating-particles span:nth-child(2) {
+    left: 80%;
+    top: 15%;
+    animation-delay: -3s;
+}
+
+.floating-particles span:nth-child(3) {
+    left: 25%;
+    top: 70%;
+    animation-delay: -6s;
+}
+
+.floating-particles span:nth-child(4) {
+    left: 90%;
+    top: 65%;
+    animation-delay: -2s;
+}
+
+.floating-particles span:nth-child(5) {
+    left: 55%;
+    top: 40%;
+    animation-delay: -8s;
+}
+
+.floating-particles span:nth-child(6) {
+    left: 40%;
+    top: 85%;
+    animation-delay: -5s;
+}
+
+.floating-particles span:nth-child(7) {
+    left: 70%;
+    top: 80%;
+    animation-delay: -1s;
+}
+
+.floating-particles span:nth-child(8) {
+    left: 5%;
+    top: 50%;
+    animation-delay: -7s;
+}
+
+@keyframes floatParticle {
+
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-35px) rotate(180deg);
+    }
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+.music-toggle {
+
+    position: fixed;
+
+    right: 25px;
+    top: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid var(--brown);
+
+    border-radius: 50%;
+
+    background: rgba(238,228,206,.88);
+
+    color: var(--brown-dark);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 200;
+
+    box-shadow:
+        0 8px 20px rgba(50,35,20,.12);
+
+    transition: .3s ease;
+
+}
+
+.music-toggle:hover {
+
+    transform: rotate(15deg) scale(1.08);
+
+    background: var(--brown-dark);
+
+    color: var(--paper);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.memory-hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 80px 20px;
+
+    border-bottom: 1px solid rgba(90,70,40,.25);
+
+}
+
+.hero-stamp {
+
+    border: 1px solid var(--red);
+
+    color: var(--red);
+
+    padding: 7px 18px;
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    transform: rotate(-3deg);
+
+    margin-bottom: 35px;
+
+}
+
+.small-label,
+.eyebrow {
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: var(--brown);
+
+}
+
+.memory-hero h1 {
+
+    font-family:
+        "IM Fell English",
+        Georgia,
+        serif;
+
+    font-size: clamp(90px, 17vw, 190px);
+
+    line-height: .8;
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    margin: 20px 0;
+
+    color: var(--ink);
+
+    text-shadow:
+        2px 2px 0 rgba(120,90,50,.12);
+
+}
+
+.hero-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin: 10px 0 25px;
+
+}
+
+.hero-line span {
+
+    width: 90px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+}
+
+.hero-line b {
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    color: var(--brown);
+
+}
+
+.hero-subtitle {
+
+    max-width: 430px;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    font-style: italic;
+
+    color: var(--ink-soft);
+
+}
+
+.scroll-hint {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--brown);
+
+}
+
+.scroll-hint .arrow {
+
+    font-size: 20px;
+
+    animation: arrowDown 1.8s infinite ease-in-out;
+
+}
+
+@keyframes arrowDown {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.memory-intro {
+
+    min-height: 80vh;
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    align-items: center;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 100px 40px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.section-number {
+
+    font-family: "Special Elite", monospace;
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+.intro-content {
+
+    max-width: 620px;
+
+}
+
+.intro-content h2,
+.section-heading h2,
+.film-header h2 {
+
+    font-family: "IM Fell English", serif;
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin: 18px 0 25px;
+
+}
+
+.intro-content > p {
+
+    font-size: 23px;
+
+    line-height: 1.65;
+
+    color: var(--ink-soft);
+
+}
+
+.handwritten-note {
+
+    margin-top: 40px;
+
+    display: inline-block;
+
+    font-family:
+        "IM Fell English",
+        serif;
+
+    font-style: italic;
+
+    font-size: 21px;
+
+    color: var(--green-dark);
+
+    transform: rotate(-2deg);
+
+    border-bottom: 1px solid var(--gold);
+
+    padding-bottom: 8px;
+
+}
+
+
+/* =====================================================
+   PHOTO SECTION
+===================================================== */
+
+.photo-section {
+
+    padding: 120px 6vw;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(210,194,164,.28),
+            rgba(238,228,206,.1)
+        );
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.section-heading {
+
+    max-width: 1100px;
+
+    margin: 0 auto 80px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+}
+
+
+.heading-note {
+
+    max-width: 220px;
+
+    font-style: italic;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+    color: var(--ink-soft);
+
+}
+
+
+/* =====================================================
+   PHOTO WALL
+===================================================== */
+
+.photo-wall {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 45px 20px;
+
+    align-items: start;
+
+}
+
+
+/* =====================================================
+   OLD PHOTO
+===================================================== */
+
+.old-photo {
+
+    position: relative;
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.old-photo.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =====================================================
+   PHOTO POSITIONS
+===================================================== */
+
+.photo-one {
+
+    grid-column: 1 / 5;
+
+    transform: rotate(-3deg);
+
+}
+
+
+.photo-two {
+
+    grid-column: 6 / 10;
+
+    margin-top: 70px;
+
+    transform: rotate(3deg);
+
+}
+
+
+.photo-three {
+
+    grid-column: 9 / 13;
+
+    margin-top: -30px;
+
+    transform: rotate(-2deg);
+
+}
+
+
+.photo-four {
+
+    grid-column: 2 / 6;
+
+    margin-top: 40px;
+
+    transform: rotate(2.5deg);
+
+}
+
+
+.photo-five {
+
+    grid-column: 7 / 11;
+
+    margin-top: 90px;
+
+    transform: rotate(-3deg);
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.old-photo:hover {
+
+    transform:
+        rotate(0deg)
+        translateY(-12px)
+        scale(1.02);
+
+    z-index: 10;
+
+}
+
+
+/* =====================================================
+   PHOTO FRAME
+===================================================== */
+
+.photo-frame {
+
+    background: #f5eddc;
+
+    padding: 13px 13px 20px;
+
+    box-shadow:
+        0 15px 35px var(--shadow);
+
+}
+
+
+/* =====================================================
+   PHOTO SLIDESHOW
+===================================================== */
+
+.photo-image.photo-slider {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 4.7;
+
+    overflow: hidden;
+
+    background: #c8b99d;
+
+}
+
+
+/* =====================================================
+   SLIDE IMAGES
+===================================================== */
+
+.photo-slider > img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transform: scale(1.02);
+
+    filter:
+        sepia(.35)
+        saturate(.72)
+        contrast(.92)
+        brightness(.94);
+
+    transition:
+        opacity .8s ease,
+        transform 1.2s ease;
+
+}
+
+
+/* =====================================================
+   ACTIVE IMAGE
+===================================================== */
+
+.photo-slider > img.active {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+}
+
+
+/* =====================================================
+   SLIDER DOTS
+===================================================== */
+
+.photo-slider .slider-dots {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 12px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    z-index: 10;
+
+}
+
+
+/* =====================================================
+   DOT
+===================================================== */
+
+.photo-slider .slider-dots span {
+
+    display: block;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.55);
+
+    border: 1px solid rgba(60,45,30,.25);
+
+    transition:
+        width .3s ease,
+        background .3s ease;
+
+}
+
+
+/* =====================================================
+   ACTIVE DOT
+===================================================== */
+
+.photo-slider .slider-dots span.active {
+
+    width: 17px;
+
+    border-radius: 10px;
+
+    background: #f5eddc;
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.old-photo:hover .photo-slider > img.active {
+
+    transform: scale(1.05);
+
+}
+
+/* =====================================================
+   IMAGE HOVER
+===================================================== */
+
+.old-photo:hover .photo-image img.active {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =====================================================
+   CAPTION
+===================================================== */
+
+.photo-caption {
+
+    display: flex;
+
+    gap: 12px;
+
+    padding-top: 13px;
+
+    align-items: start;
+
+}
+
+
+.photo-caption span {
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 10px;
+
+    color: var(--gold);
+
+}
+
+
+.photo-caption p {
+
+    font-family: "IM Fell English", serif;
+
+    font-style: italic;
+
+    font-size: 17px;
+
+    line-height: 1.15;
+
+    color: var(--ink-soft);
+
+}
+
+
+/* =====================================================
+   TAPE
+===================================================== */
+
+.photo-tape {
+
+    position: absolute;
+
+    top: -15px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    width: 75px;
+
+    height: 28px;
+
+    background:
+        rgba(202,183,143,.62);
+
+    opacity: .75;
+
+    z-index: 20;
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .photo-section {
+
+        padding: 90px 5vw;
+
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 60px;
+
+        align-items: start;
+
+        gap: 30px;
+
+    }
+
+
+    .heading-note {
+
+        font-size: 16px;
+
+        max-width: 180px;
+
+    }
+
+
+    .photo-wall {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 55px 20px;
+
+    }
+
+
+    .photo-one {
+
+        grid-column: 1 / 2;
+
+    }
+
+
+    .photo-two {
+
+        grid-column: 2 / 3;
+
+        margin-top: 55px;
+
+    }
+
+
+    .photo-three {
+
+        grid-column: 1 / 2;
+
+        margin-top: -10px;
+
+    }
+
+
+    .photo-four {
+
+        grid-column: 2 / 3;
+
+        margin-top: 45px;
+
+    }
+
+
+    .photo-five {
+
+        grid-column: 1 / 2;
+
+        margin-top: 0;
+
+    }
+
+
+    .photo-caption p {
+
+        font-size: 15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+    .photo-section {
+
+        padding: 75px 7vw;
+
+    }
+
+
+    .section-heading {
+
+        display: block;
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .heading-note {
+
+        margin-top: 18px;
+
+        max-width: 250px;
+
+        font-size: 16px;
+
+    }
+
+
+    .photo-wall {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 70px;
+
+        width: 100%;
+
+    }
+
+
+    .old-photo {
+
+        width: 88%;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .photo-one,
+    .photo-two,
+    .photo-three,
+    .photo-four,
+    .photo-five {
+
+        grid-column: auto;
+
+    }
+
+
+    .photo-one {
+
+        transform: rotate(-2deg);
+
+    }
+
+
+    .photo-two {
+
+        margin-top: 0;
+
+        transform: rotate(2deg);
+
+    }
+
+
+    .photo-three {
+
+        margin-top: 0;
+
+        transform: rotate(-1.5deg);
+
+    }
+
+
+    .photo-four {
+
+        margin-top: 0;
+
+        transform: rotate(2deg);
+
+    }
+
+
+    .photo-five {
+
+        margin-top: 0;
+
+        transform: rotate(-2deg);
+
+    }
+
+
+    .photo-caption p {
+
+        font-size: 16px;
+
+    }
+
+
+    .slider-dots {
+
+        bottom: 10px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .old-photo {
+
+        width: 94%;
+
+    }
+
+
+    .photo-frame {
+
+        padding: 10px 10px 17px;
+
+    }
+
+
+    .photo-caption {
+
+        gap: 9px;
+
+    }
+
+
+    .photo-caption p {
+
+        font-size: 14px;
+
+    }
+
+
+    .slider-dots span {
+
+        width: 5px;
+
+        height: 5px;
+
+    }
+
+
+    .slider-dots span.active {
+
+        width: 14px;
+
+    }
+
+}
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline-section {
+
+    padding: 150px 30px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.centered {
+
+    display: block;
+
+    text-align: center;
+
+    margin-bottom: 110px;
+
+}
+
+.timeline {
+
+    position: relative;
+
+    padding: 30px 0;
+
+}
+
+.timeline-line {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            var(--gold),
+            transparent,
+            var(--gold)
+        );
+
+}
+
+.timeline-item {
+
+    width: 50%;
+
+    padding: 20px 60px;
+
+    position: relative;
+
+}
+
+.timeline-item.left {
+
+    margin-right: auto;
+
+    text-align: right;
+
+}
+
+.timeline-item.right {
+
+    margin-left: 50%;
+
+}
+
+.timeline-dot {
+
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    border: 2px solid var(--gold);
+
+    border-radius: 50%;
+
+    background: var(--paper);
+
+    top: 35px;
+
+}
+
+.timeline-item.left .timeline-dot {
+    right: -7px;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -7px;
+}
+
+.timeline-card {
+
+    border-top: 1px solid rgba(100,75,40,.35);
+
+    padding-top: 20px;
+
+}
+
+.timeline-card .year {
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: var(--gold);
+
+}
+
+.timeline-card h3 {
+
+    font-family: "IM Fell English", serif;
+
+    font-size: 34px;
+
+    font-weight: 400;
+
+    margin: 12px 0;
+
+}
+
+.timeline-card p {
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: var(--ink-soft);
+
+}
+
+.timeline-card strong {
+
+    display: block;
+
+    margin-top: 18px;
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--green-dark);
+
+}
+
+
+/* =====================================================
+   FILM
+===================================================== */
+
+.film-section {
+
+    padding: 130px 20px;
+
+    overflow: hidden;
+
+    background: var(--green-dark);
+
+    color: var(--paper);
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.film-header {
+
+    max-width: 650px;
+
+    margin: 0 auto 80px;
+
+    text-align: center;
+
+}
+
+.film-header .section-number {
+
+    color: #c6a76d;
+
+}
+
+.film-header .eyebrow {
+
+    color: #c6a76d;
+
+}
+
+.film-header h2 {
+
+    color: var(--paper);
+
+}
+
+.film-header p {
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    color: #cfc5b2;
+
+}
+
+.film-strip {
+
+    position: relative;
+
+    width: 1200px;
+
+    max-width: none;
+
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-2deg);
+
+    background: #151b15;
+
+    padding: 45px 0;
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.25);
+
+}
+
+.film-frames {
+
+    display: flex;
+
+    gap: 16px;
+
+    padding: 0 30px;
+
+}
+
+.film-frame {
+
+    flex: 1;
+
+    min-width: 200px;
+
+    position: relative;
+
+    background: #252b24;
+
+    padding: 10px;
+
+}
+
+.film-frame img {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1.05;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        grayscale(.35)
+        sepia(.4)
+        contrast(.9);
+
+}
+
+.film-frame span {
+
+    display: block;
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    padding-bottom: 8px;
+
+    color: #c6a76d;
+
+}
+
+.film-holes {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 18px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 20px,
+            #eee4ce 20px,
+            #eee4ce 32px,
+            transparent 32px,
+            transparent 50px
+        );
+
+    opacity: .8;
+
+}
+
+.top-holes {
+    top: 12px;
+}
+
+.bottom-holes {
+    bottom: 12px;
+}
+
+
+/* =====================================================
+   LETTER TRANSITION
+===================================================== */
+
+.letter-transition {
+
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.transition-line {
+
+    height: 80px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            transparent,
+            var(--gold)
+        );
+
+    margin-bottom: 45px;
+
+}
+
+.letter-transition > p {
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--gold);
+
+}
+
+.letter-transition h2 {
+
+    max-width: 650px;
+
+    font-family: "IM Fell English", serif;
+
+    font-weight: 400;
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1.05;
+
+    margin: 25px 0 45px;
+
+}
+
+.wax-symbol {
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    color: #e8c995;
+
+    box-shadow:
+        0 10px 25px rgba(70,30,20,.25);
+
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter-section {
+
+    padding: 100px 20px 160px;
+
+    position: relative;
+
+    z-index: 2;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(150,115,65,.10),
+            transparent 55%
+        );
+
+}
+
+.letter-label {
+
+    text-align: center;
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--brown);
+
+    margin-bottom: 35px;
+
+}
+
+.letter-paper {
+
+    position: relative;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 70px 85px 45px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(120,90,50,.06),
+            transparent 8%,
+            transparent 92%,
+            rgba(120,90,50,.06)
+        ),
+        #f4ead5;
+
+    box-shadow:
+        0 25px 60px rgba(55,40,20,.18),
+        0 2px 4px rgba(55,40,20,.15);
+
+    border: 1px solid rgba(120,90,50,.18);
+
+}
+
+.letter-paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(120,90,50,.16);
+
+    pointer-events: none;
+
+}
+
+.paper-corner {
+
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    border-color: var(--gold);
+
+    opacity: .55;
+
+}
+
+.corner-one {
+
+    top: 28px;
+    left: 28px;
+
+    border-top: 1px solid;
+    border-left: 1px solid;
+
+}
+
+.corner-two {
+
+    right: 28px;
+    bottom: 28px;
+
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+
+}
+
+.letter-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid rgba(100,75,40,.25);
+
+    padding-bottom: 20px;
+
+    margin-bottom: 45px;
+
+}
+
+.letter-date {
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+
+}
+
+.letter-symbol {
+
+    color: var(--gold);
+
+    font-size: 20px;
+
+}
+
+.letter-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.letter-dear {
+
+    font-family: "IM Fell English", serif;
+
+    font-style: italic;
+
+    font-size: 31px;
+
+    margin-bottom: 30px;
+
+}
+
+.typed-letter {
+
+    min-height: 350px;
+
+    white-space: pre-line;
+
+    font-family:
+        "IM Fell English",
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.85;
+
+    color: #40372b;
+
+}
+
+.typing-cursor {
+
+    display: inline-block;
+
+    width: 2px;
+
+    height: 22px;
+
+    background: var(--brown);
+
+    margin-left: 3px;
+
+    animation: blink .7s infinite;
+
+}
+
+@keyframes blink {
+
+    0%,50% {
+        opacity: 1;
+    }
+
+    51%,100% {
+        opacity: 0;
+    }
+
+}
+
+.letter-ending {
+
+    margin-top: 45px;
+
+    font-family: "IM Fell English", serif;
+
+    font-style: italic;
+
+    font-size: 26px;
+
+    color: var(--green-dark);
+
+}
+
+.signature {
+
+    margin-top: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    text-align: right;
+
+    font-family: "IM Fell English", serif;
+
+    font-style: italic;
+
+}
+
+.signature span {
+
+    font-size: 18px;
+
+    color: var(--ink-soft);
+
+}
+
+.signature strong {
+
+    margin-top: 5px;
+
+    max-width: 240px;
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    color: var(--ink);
+
+}
+
+.letter-footer {
+
+    margin-top: 65px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(100,75,40,.25);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final-memory {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #6d7561,
+            #343d30
+        );
+
+    color: var(--paper);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    position: relative;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+}
+
+.final-memory::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 25px;
+
+    border: 1px solid rgba(226,201,150,.35);
+
+}
+
+.final-inner {
+
+    max-width: 700px;
+
+}
+
+.final-small {
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #d2b77d;
+
+}
+
+.final-number {
+
+    font-family: "IM Fell English", serif;
+
+    font-size: clamp(150px, 25vw, 280px);
+
+    line-height: .8;
+
+    color: rgba(238,228,206,.08);
+
+    margin: 25px 0;
+
+}
+
+.final-memory h2 {
+
+    font-family: "IM Fell English", serif;
+
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: .95;
+
+    font-weight: 400;
+
+    margin-top: -150px;
+
+    position: relative;
+
+}
+
+.final-memory h2 span {
+
+    color: #d4b978;
+
+}
+
+.final-text {
+
+    max-width: 500px;
+
+    margin: 35px auto;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    color: #d6cebd;
+
+    font-style: italic;
+
+}
+
+.final-divider {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #d4b978;
+
+    margin: 35px 0;
+
+}
+
+.final-divider span {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: #bca56f;
+
+}
+
+.next-page-button {
+
+    position: relative;
+
+    z-index: 9999;
+
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    border: 1px solid #c9af75;
+
+    background: transparent;
+
+    color: var(--paper);
+
+    font-family: "Special Elite", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    transition: .35s ease;
+
+}
+
+
+.next-page-button:hover {
+
+    background: #d4b978;
+
+    color: var(--green-dark);
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE FIX
+===================================================== */
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+    /* ---------- HERO ---------- */
+
+    .memory-hero {
+        min-height: 100svh;
+        padding: 70px 25px;
+    }
+
+    .memory-hero h1 {
+        font-size: clamp(80px, 20vw, 130px);
+        letter-spacing: 0;
+    }
+
+    .hero-line {
+        gap: 12px;
+    }
+
+    .hero-line span {
+        width: 60px;
+    }
+
+    .hero-subtitle {
+        max-width: 330px;
+        font-size: 19px;
+    }
+
+
+    /* ---------- INTRO ---------- */
+
+    .memory-intro {
+
+        display: block;
+
+        min-height: auto;
+
+        padding: 90px 25px;
+
+    }
+
+    .memory-intro .section-number {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .intro-content {
+        max-width: 100%;
+    }
+
+    .intro-content h2 {
+        font-size: 55px;
+    }
+
+    .intro-content > p {
+        font-size: 19px;
+        line-height: 1.6;
+    }
+
+    .handwritten-note {
+        font-size: 18px;
+        max-width: 90%;
+    }
+
+
+    /* ---------- PHOTO SECTION ---------- */
+
+    .photo-section {
+        padding: 90px 20px;
+    }
+
+    .section-heading {
+
+        display: block;
+
+        margin-bottom: 55px;
+
+    }
+
+    .section-heading h2 {
+        font-size: 55px;
+    }
+
+    .heading-note {
+        margin-top: 20px;
+        font-size: 17px;
+    }
+
+    .photo-wall {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 45px;
+
+        width: 100%;
+
+    }
+
+    .old-photo {
+
+        width: min(330px, 88vw);
+
+        margin: 0 !important;
+
+        transform: rotate(-2deg);
+
+    }
+
+    .photo-two {
+        transform: rotate(2deg);
+    }
+
+    .photo-three {
+        transform: rotate(-1.5deg);
+    }
+
+    .photo-four {
+        transform: rotate(2deg);
+    }
+
+    .photo-five {
+        transform: rotate(-2deg);
+    }
+
+    .old-photo:hover {
+
+        transform:
+            translateY(-5px)
+            rotate(0deg)
+            scale(1.01);
+
+    }
+
+
+    /* ---------- TIMELINE ---------- */
+
+    .timeline-section {
+
+        padding: 100px 20px;
+
+    }
+
+    .centered {
+
+        margin-bottom: 65px;
+
+    }
+
+    .centered h2 {
+
+        font-size: 48px;
+
+    }
+
+    .timeline {
+
+        padding: 10px 0;
+
+    }
+
+    .timeline-line {
+
+        left: 13px;
+
+    }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+
+        width: 100%;
+
+        margin: 0;
+
+        padding:
+
+            25px
+            15px
+            35px
+            45px;
+
+        text-align: left;
+
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+
+        left: 7px;
+
+        right: auto;
+
+        width: 12px;
+
+        height: 12px;
+
+    }
+
+    .timeline-card {
+
+        padding-top: 15px;
+
+    }
+
+    .timeline-card h3 {
+
+        font-size: 30px;
+
+    }
+
+    .timeline-card p {
+
+        font-size: 17px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /* ---------- FILM ---------- */
+
+    .film-section {
+
+        padding: 100px 0;
+
+    }
+
+    .film-header {
+
+        padding: 0 25px;
+
+        margin-bottom: 55px;
+
+    }
+
+    .film-header h2 {
+
+        font-size: 55px;
+
+    }
+
+    .film-header p {
+
+        font-size: 18px;
+
+    }
+
+    /*
+       Important:
+       بدل الـ 900px الثابت،
+       نخلي الفيلم يعمل horizontal scroll
+       من غير ما يكسر الصفحة.
+    */
+
+    .film-strip {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        left: 0;
+
+        transform: rotate(-1.5deg);
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        padding: 45px 15px;
+
+        scrollbar-width: none;
+
+    }
+
+    .film-strip::-webkit-scrollbar {
+        display: none;
+    }
+
+    .film-frames {
+
+        width: max-content;
+
+        display: flex;
+
+        gap: 12px;
+
+        padding: 0 15px;
+
+    }
+
+    .film-frame {
+
+        flex: 0 0 150px;
+
+        min-width: 150px;
+
+    }
+
+
+    /* ---------- LETTER TRANSITION ---------- */
+
+    .letter-transition {
+
+        min-height: 65vh;
+
+        padding: 90px 25px;
+
+    }
+
+    .transition-line {
+
+        height: 60px;
+
+    }
+
+    .letter-transition h2 {
+
+        font-size: 48px;
+
+        max-width: 350px;
+
+    }
+
+
+    /* ---------- LETTER ---------- */
+
+    .letter-section {
+
+        padding:
+
+            80px
+            15px
+            110px;
+
+    }
+
+    .letter-paper {
+
+        width: 100%;
+
+        padding:
+
+            55px
+            30px
+            35px;
+
+    }
+
+    .letter-paper::before {
+
+        inset: 12px;
+
+    }
+
+    .letter-top {
+
+        margin-bottom: 35px;
+
+    }
+
+    .typed-letter {
+
+        font-size: 18px;
+
+        line-height: 1.75;
+
+        min-height: 0;
+
+    }
+
+    .letter-dear {
+
+        font-size: 28px;
+
+    }
+
+    .letter-ending {
+
+        font-size: 23px;
+
+        line-height: 1.3;
+
+    }
+
+    .signature {
+
+        margin-top: 35px;
+
+    }
+
+    .letter-footer {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 10px 20px;
+
+        text-align: center;
+
+    }
+
+
+    /* ---------- FINAL ---------- */
+
+    .final-memory {
+
+        min-height: 100svh;
+
+        padding:
+
+            100px
+            25px;
+
+    }
+
+    .final-memory::before {
+
+        inset: 12px;
+
+    }
+
+    .final-number {
+
+        font-size: 180px;
+
+        margin: 20px 0;
+
+    }
+
+    .final-memory h2 {
+
+        font-size: 50px;
+
+        margin-top: -95px;
+
+    }
+
+    .final-text {
+
+        font-size: 18px;
+
+        max-width: 320px;
+
+    }
+
+    .next-page-button {
+
+        padding: 14px 20px;
+
+        font-size: 9px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 550px) {
+
+
+    /* ---------- MUSIC BUTTON ---------- */
+
+    .music-toggle {
+
+        width: 42px;
+
+        height: 42px;
+
+        right: 14px;
+
+        top: 14px;
+
+        font-size: 18px;
+
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .memory-hero {
+
+        padding:
+
+            60px
+            20px
+            80px;
+
+    }
+
+    .hero-stamp {
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        padding: 6px 13px;
+
+        margin-bottom: 25px;
+
+    }
+
+    .small-label {
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+
+    }
+
+    .memory-hero h1 {
+
+        font-size: 82px;
+
+        letter-spacing: -2px;
+
+        margin: 15px 0;
+
+    }
+
+    .hero-line {
+
+        gap: 10px;
+
+        margin-bottom: 20px;
+
+    }
+
+    .hero-line span {
+
+        width: 42px;
+
+    }
+
+    .hero-line b {
+
+        font-size: 15px;
+
+    }
+
+    .hero-subtitle {
+
+        font-size: 17px;
+
+        line-height: 1.45;
+
+        max-width: 290px;
+
+    }
+
+    .scroll-hint {
+
+        bottom: 22px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    /* ---------- INTRO ---------- */
+
+    .memory-intro {
+
+        padding:
+
+            75px
+            20px;
+
+    }
+
+    .intro-content h2 {
+
+        font-size: 48px;
+
+        margin: 15px 0 20px;
+
+    }
+
+    .intro-content > p {
+
+        font-size: 18px;
+
+        line-height: 1.6;
+
+    }
+
+    .handwritten-note {
+
+        font-size: 17px;
+
+        line-height: 1.4;
+
+        margin-top: 30px;
+
+    }
+
+
+    /* ---------- PHOTOS ---------- */
+
+    .photo-section {
+
+        padding:
+
+            75px
+            15px
+            90px;
+
+    }
+
+    .section-heading {
+
+        margin-bottom: 45px;
+
+    }
+
+    .section-heading h2 {
+
+        font-size: 47px;
+
+        margin-top: 15px;
+
+    }
+
+    .heading-note {
+
+        font-size: 16px;
+
+    }
+
+    .photo-wall {
+
+        gap: 50px;
+
+    }
+
+    .old-photo {
+
+        width: min(310px, 88vw);
+
+    }
+
+    .photo-frame {
+
+        padding:
+
+            10px
+            10px
+            16px;
+
+    }
+
+    .photo-caption p {
+
+        font-size: 16px;
+
+    }
+
+
+    /* ---------- TIMELINE ---------- */
+
+    .timeline-section {
+
+        padding:
+
+            85px
+            15px
+            100px;
+
+    }
+
+    .centered {
+
+        margin-bottom: 50px;
+
+    }
+
+    .centered h2 {
+
+        font-size: 43px;
+
+    }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+
+        padding:
+
+            20px
+            10px
+            30px
+            38px;
+
+    }
+
+    .timeline-line {
+
+        left: 10px;
+
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+
+        left: 4px;
+
+        width: 11px;
+
+        height: 11px;
+
+    }
+
+    .timeline-card h3 {
+
+        font-size: 27px;
+
+    }
+
+    .timeline-card p {
+
+        font-size: 16px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /* ---------- FILM ---------- */
+
+    .film-section {
+
+        padding:
+
+            80px
+            0
+            90px;
+
+    }
+
+    .film-header {
+
+        padding:
+
+            0
+            20px;
+
+    }
+
+    .film-header h2 {
+
+        font-size: 48px;
+
+    }
+
+    .film-header p {
+
+        font-size: 17px;
+
+        line-height: 1.5;
+
+    }
+
+    .film-strip {
+
+        padding:
+
+            42px
+            8px;
+
+        transform: rotate(-1deg);
+
+    }
+
+    .film-frames {
+
+        gap: 10px;
+
+        padding: 0 10px;
+
+    }
+
+    .film-frame {
+
+        flex-basis: 135px;
+
+        min-width: 135px;
+
+        padding: 8px;
+
+    }
+
+    .film-frame span {
+
+        font-size: 8px;
+
+        padding-bottom: 6px;
+
+    }
+
+
+    /* ---------- LETTER TRANSITION ---------- */
+
+    .letter-transition {
+
+        min-height: 60vh;
+
+        padding:
+
+            80px
+            20px;
+
+    }
+
+    .letter-transition > p {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+    }
+
+    .letter-transition h2 {
+
+        font-size: 42px;
+
+        line-height: 1.05;
+
+        margin: 20px 0 35px;
+
+    }
+
+    .wax-symbol {
+
+        width: 52px;
+
+        height: 52px;
+
+    }
+
+
+    /* ---------- LETTER ---------- */
+
+    .letter-section {
+
+        padding:
+
+            65px
+            12px
+            90px;
+
+    }
+
+    .letter-label {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 25px;
+
+    }
+
+    .letter-paper {
+
+        padding:
+
+            45px
+            22px
+            28px;
+
+    }
+
+    .letter-paper::before {
+
+        inset: 10px;
+
+    }
+
+    .letter-top {
+
+        padding-bottom: 15px;
+
+        margin-bottom: 30px;
+
+    }
+
+    .letter-date {
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+    .letter-symbol {
+
+        font-size: 16px;
+
+    }
+
+    .letter-dear {
+
+        font-size: 25px;
+
+        margin-bottom: 22px;
+
+    }
+
+    .typed-letter {
+
+        font-size: 17px;
+
+        line-height: 1.72;
+
+    }
+
+    .typing-cursor {
+
+        height: 18px;
+
+    }
+
+    .letter-ending {
+
+        margin-top: 35px;
+
+        font-size: 21px;
+
+    }
+
+    .signature {
+
+        margin-top: 30px;
+
+    }
+
+    .signature span {
+
+        font-size: 16px;
+
+    }
+
+    .signature strong {
+
+        font-size: 19px;
+
+        max-width: 190px;
+
+    }
+
+    .letter-footer {
+
+        margin-top: 45px;
+
+        padding-top: 15px;
+
+        font-size: 6px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    /* ---------- FINAL ---------- */
+
+    .final-memory {
+
+        padding:
+
+            90px
+            20px;
+
+    }
+
+    .final-number {
+
+        font-size: 145px;
+
+        margin: 15px 0;
+
+    }
+
+    .final-memory h2 {
+
+        font-size: 43px;
+
+        line-height: .98;
+
+        margin-top: -75px;
+
+    }
+
+    .final-text {
+
+        font-size: 17px;
+
+        line-height: 1.5;
+
+        margin: 28px auto;
+
+    }
+
+    .final-divider {
+
+        margin: 28px 0;
+
+    }
+
+    .final-divider span {
+
+        width: 45px;
+
+    }
+
+    .next-page-button {
+
+        width: auto;
+
+        max-width: 90%;
+
+        padding: 13px 17px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .memory-hero h1 {
+        font-size: 72px;
+    }
+
+    .intro-content h2 {
+        font-size: 43px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+    }
+
+    .centered h2 {
+        font-size: 38px;
+    }
+
+    .letter-transition h2 {
+        font-size: 37px;
+    }
+
+    .letter-paper {
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .typed-letter {
+        font-size: 16px;
+    }
+
+    .final-number {
+        font-size: 125px;
+    }
+
+    .final-memory h2 {
+        font-size: 38px;
+    }
+
+}

@@ -1,0 +1,894 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    background: #111;
+    font-family: "Press Start 2P", monospace;
+}
+
+
+/* =========================
+   WORLD
+========================= */
+
+.minecraft-world {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #74c9ef;
+}
+
+
+/* =========================
+   SKY
+========================= */
+
+.sky {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            #59b7e8 0%,
+            #8ed9f4 55%,
+            #c9eff8 100%
+        );
+}
+
+
+/* =========================
+   SUN
+========================= */
+
+.sun {
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    top: 75px;
+    right: 12%;
+    background: #fff4a8;
+    box-shadow:
+        0 0 0 8px rgba(255, 244, 168, 0.25),
+        0 0 50px rgba(255, 244, 168, 0.7);
+    image-rendering: pixelated;
+}
+
+
+/* =========================
+   CLOUDS
+========================= */
+
+.cloud {
+    position: absolute;
+    height: 28px;
+    background: #fff;
+    opacity: 0.85;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+}
+
+.cloud::before {
+    width: 45px;
+    height: 45px;
+    left: 25px;
+    bottom: 0;
+}
+
+.cloud::after {
+    width: 60px;
+    height: 55px;
+    left: 60px;
+    bottom: 0;
+}
+
+.cloud-1 {
+    width: 130px;
+    top: 130px;
+    left: 8%;
+}
+
+.cloud-2 {
+    width: 100px;
+    top: 230px;
+    right: 25%;
+    transform: scale(.75);
+}
+
+.cloud-3 {
+    width: 150px;
+    top: 90px;
+    left: 42%;
+    transform: scale(.55);
+}
+
+
+/* =========================
+   MOUNTAINS
+========================= */
+
+.mountain {
+    position: absolute;
+    bottom: 260px;
+    width: 0;
+    height: 0;
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+    border-bottom: 230px solid #72a7a0;
+    opacity: .65;
+}
+
+.mountain-1 {
+    left: -80px;
+}
+
+.mountain-2 {
+    left: 25%;
+    transform: scale(1.35);
+}
+
+.mountain-3 {
+    right: -100px;
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   TREES
+========================= */
+
+.tree {
+    position: absolute;
+    bottom: 210px;
+    z-index: 3;
+}
+
+.tree-trunk {
+    width: 35px;
+    height: 110px;
+    margin: auto;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #704321 0 8px,
+            #8d5729 8px 16px
+        );
+}
+
+.tree-leaves {
+    width: 125px;
+    height: 125px;
+    background:
+        linear-gradient(135deg, #2c8b42 0 50%, #237435 50%);
+    clip-path: polygon(
+        30% 0,
+        70% 0,
+        70% 12%,
+        90% 12%,
+        90% 35%,
+        100% 35%,
+        100% 65%,
+        82% 65%,
+        82% 82%,
+        65% 82%,
+        65% 100%,
+        35% 100%,
+        35% 82%,
+        18% 82%,
+        18% 65%,
+        0 65%,
+        0 35%,
+        10% 35%,
+        10% 12%,
+        30% 12%
+    );
+}
+
+.tree-1 {
+    left: 5%;
+}
+
+.tree-2 {
+    left: 82%;
+    transform: scale(.8);
+}
+
+.tree-3 {
+    left: 68%;
+    transform: scale(.55);
+}
+
+
+/* =========================
+   GROUND
+========================= */
+
+.ground {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 225px;
+    z-index: 4;
+}
+
+.grass-top {
+    height: 38px;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #5aa832 0 25px,
+            #68bd3b 25px 50px
+        );
+    border-top: 8px solid #83d149;
+}
+
+.dirt-layer {
+    height: calc(100% - 38px);
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #87512e 0 18px,
+            #754326 18px 36px
+        );
+    position: relative;
+}
+
+.dirt-layer span {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: #5b341f;
+}
+
+.dirt-layer span:nth-child(1) {
+    left: 8%;
+    top: 25%;
+}
+
+.dirt-layer span:nth-child(2) {
+    left: 20%;
+    top: 65%;
+}
+
+.dirt-layer span:nth-child(3) {
+    left: 38%;
+    top: 35%;
+}
+
+.dirt-layer span:nth-child(4) {
+    left: 52%;
+    top: 75%;
+}
+
+.dirt-layer span:nth-child(5) {
+    left: 65%;
+    top: 25%;
+}
+
+.dirt-layer span:nth-child(6) {
+    left: 76%;
+    top: 60%;
+}
+
+.dirt-layer span:nth-child(7) {
+    left: 88%;
+    top: 35%;
+}
+
+.dirt-layer span:nth-child(8) {
+    left: 45%;
+    top: 15%;
+}
+
+
+/* =========================
+   HUD
+========================= */
+
+.minecraft-hud {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 30px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hud-title {
+    color: white;
+    text-shadow:
+        3px 3px 0 #333,
+        5px 5px 0 rgba(0,0,0,.3);
+}
+
+.pixel-small {
+    font-size: 10px;
+    color: #ffe878;
+}
+
+.hud-title h1 {
+    font-size: 22px;
+    margin-top: 12px;
+}
+
+.day-counter {
+    background: rgba(0,0,0,.65);
+    border: 3px solid #777;
+    padding: 12px 18px;
+    color: white;
+    text-align: center;
+}
+
+.day-counter span {
+    display: block;
+    font-size: 8px;
+    color: #ccc;
+}
+
+.day-counter strong {
+    display: block;
+    font-size: 22px;
+    color: #ffe36b;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.world-content {
+    position: relative;
+    z-index: 8;
+    width: min(850px, 92%);
+    margin: 5vh auto 250px;
+    text-align: center;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-box {
+    color: white;
+    text-shadow: 3px 3px #333;
+}
+
+.world-label {
+    font-size: 10px;
+    color: #ffe66d;
+    margin-bottom: 22px;
+}
+
+.welcome-box h2 {
+    font-size: clamp(25px, 5vw, 48px);
+    line-height: 1.5;
+}
+
+.welcome-box h2 span {
+    color: #ffe66d;
+}
+
+.pixel-line {
+    width: 260px;
+    height: 6px;
+    background: white;
+    margin: 25px auto;
+    box-shadow: 5px 5px rgba(0,0,0,.3);
+}
+
+.birthday-text {
+    font-size: 9px;
+}
+
+
+/* =========================
+   PLAYER
+========================= */
+
+.player-section {
+    margin-top: 35px;
+}
+
+.player-name {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    color: white;
+    text-shadow: 3px 3px #333;
+}
+
+.player-name span {
+    font-size: 8px;
+}
+
+.player-name strong {
+    font-size: 15px;
+    color: #ffe76a;
+}
+
+.player-stats {
+    margin-top: 15px;
+}
+
+.hearts,
+.hunger {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.hearts {
+    color: #ef3f3f;
+    font-size: 20px;
+    text-shadow: 2px 2px #5d1717;
+}
+
+.hunger {
+    margin-top: 4px;
+    color: #e6a03d;
+    font-size: 15px;
+}
+
+
+/* =========================
+   XP
+========================= */
+
+.xp-section {
+    width: 400px;
+    max-width: 90%;
+    margin: 15px auto;
+    position: relative;
+}
+
+.level-number {
+    color: #83ff3c;
+    font-size: 17px;
+    text-shadow: 2px 2px #333;
+    margin-bottom: 5px;
+}
+
+.xp-bar {
+    height: 16px;
+    padding: 3px;
+    background: #222;
+    border: 2px solid #777;
+}
+
+.xp-fill {
+    width: 82%;
+    height: 100%;
+    background: #73df32;
+    box-shadow: inset 0 -3px rgba(0,0,0,.15);
+}
+
+.xp-section p {
+    margin-top: 8px;
+    color: white;
+    font-size: 8px;
+    text-shadow: 2px 2px #333;
+}
+
+
+/* =========================
+   ACHIEVEMENT
+========================= */
+
+.achievement {
+    width: min(580px, 95%);
+    margin: 25px auto;
+    padding: 15px;
+    background: rgba(25,25,25,.88);
+    border: 3px solid #888;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: white;
+    text-align: left;
+    box-shadow: 6px 6px rgba(0,0,0,.3);
+    animation: achievementIn 1s ease both;
+}
+
+@keyframes achievementIn {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.achievement-icon {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    background: #777;
+    border: 4px solid #aaa;
+    font-size: 30px;
+}
+
+.achievement-info span {
+    display: block;
+    color: #9fd8ff;
+    font-size: 7px;
+    margin-bottom: 8px;
+}
+
+.achievement-info strong {
+    display: block;
+    font-size: 12px;
+    color: #ffe46b;
+    margin-bottom: 8px;
+}
+
+.achievement-info small {
+    font-size: 6px;
+    color: #ccc;
+}
+
+
+/* =========================
+   CHEST
+========================= */
+
+.chest-area {
+    margin-top: 20px;
+    color: white;
+}
+
+.chest-hint {
+    font-size: 8px;
+    text-shadow: 2px 2px #333;
+    margin-bottom: 15px;
+}
+
+.chest-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    width: 130px;
+    height: 110px;
+    transition: transform .2s;
+}
+
+.chest-button:hover {
+    transform: scale(1.08);
+}
+
+.chest-lid {
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    left: 5px;
+    top: 10px;
+    background:
+        linear-gradient(
+            #9c5d30,
+            #78401f
+        );
+    border: 6px solid #402312;
+    transform-origin: bottom;
+    transition: transform .6s ease;
+}
+
+.chest-body {
+    position: absolute;
+    width: 120px;
+    height: 65px;
+    left: 5px;
+    top: 48px;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #a96636 0 18px,
+            #8b4e27 18px 36px
+        );
+    border: 6px solid #402312;
+}
+
+.chest-lock {
+    position: absolute;
+    width: 20px;
+    height: 25px;
+    left: 44px;
+    top: 15px;
+    background: #e6c34e;
+    border: 4px solid #6e571c;
+}
+
+.chest-button.open .chest-lid {
+    transform: rotateX(-115deg);
+}
+
+.click-text {
+    margin-top: 12px;
+    font-size: 7px;
+    color: #ffe76b;
+}
+
+
+/* =========================
+   QUEST
+========================= */
+
+.quest-box {
+    width: min(600px, 95%);
+    margin: 30px auto 0;
+    background: #202020;
+    border: 4px solid #777;
+    box-shadow: 7px 7px rgba(0,0,0,.4);
+    color: white;
+    opacity: 0;
+    transform: scale(.8);
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.quest-box.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.quest-header {
+    background: #373737;
+    padding: 15px;
+    color: #ffe66d;
+    font-size: 10px;
+    text-align: left;
+}
+
+.quest-header span {
+    display: inline-grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    background: #ffe66d;
+    color: #333;
+}
+
+.quest-content {
+    padding: 25px;
+}
+
+.quest-content h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.quest-content p {
+    font-size: 8px;
+    line-height: 2;
+    color: #ccc;
+}
+
+.quest-content > strong {
+    display: block;
+    margin: 15px 0;
+    color: #8cff4d;
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.quest-extra {
+    margin-top: 15px;
+}
+
+.quest-content button,
+.final-card button {
+    margin-top: 22px;
+    padding: 14px 18px;
+    border: 4px solid #555;
+    background: #777;
+    color: white;
+    font-family: inherit;
+    font-size: 8px;
+    cursor: pointer;
+    box-shadow: inset -4px -4px #444;
+}
+
+.quest-content button:hover,
+.final-card button:hover {
+    background: #888;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   INVENTORY
+========================= */
+
+.inventory {
+    position: fixed;
+    z-index: 30;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background: rgba(20,20,20,.9);
+    border: 4px solid #555;
+    padding: 4px;
+}
+
+.inventory-slot {
+    width: 52px;
+    height: 52px;
+    border: 3px solid #777;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    background: #383838;
+}
+
+.inventory-slot.selected {
+    border-color: white;
+    background: #555;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0,0,0,.78);
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.final-message.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.final-card {
+    width: min(550px, 95%);
+    background: #242424;
+    border: 5px solid #777;
+    box-shadow:
+        10px 10px rgba(0,0,0,.6),
+        inset 0 0 0 3px #444;
+    padding: 40px 25px;
+    text-align: center;
+    color: white;
+}
+
+.pixel-stars {
+    color: #ffe66d;
+    letter-spacing: 15px;
+    margin-bottom: 25px;
+}
+
+.final-card h2 {
+    color: #ffe66d;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.final-card p {
+    font-size: 11px;
+    margin: 25px 0 15px;
+}
+
+.final-card span {
+    display: block;
+    font-size: 7px;
+    color: #aaa;
+    line-height: 2;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .minecraft-hud {
+        padding: 20px;
+    }
+
+    .hud-title h1 {
+        font-size: 14px;
+    }
+
+    .pixel-small {
+        font-size: 7px;
+    }
+
+    .day-counter {
+        padding: 8px 10px;
+    }
+
+    .day-counter strong {
+        font-size: 15px;
+    }
+
+    .world-content {
+        margin-top: 8vh;
+    }
+
+    .welcome-box h2 {
+        font-size: 25px;
+    }
+
+    .birthday-text {
+        font-size: 7px;
+    }
+
+    .achievement {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .achievement-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    .achievement-info strong {
+        font-size: 9px;
+    }
+
+    .achievement-info small {
+        font-size: 5px;
+    }
+
+    .inventory-slot {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    .inventory {
+        bottom: 10px;
+    }
+
+    .ground {
+        height: 180px;
+    }
+
+    .tree {
+        bottom: 165px;
+    }
+
+    .mountain {
+        bottom: 200px;
+    }
+}

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ANAS | His Soundtrack</title>
+
+    <link rel="stylesheet" href="../css/music.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================= -->
+
+    <div class="music-background">
+
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="noise"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         MAIN PAGE
+    ========================================= -->
+
+    <main class="music-page">
+
+
+        <!-- HEADER -->
+
+        <header class="music-header">
+
+            <div class="header-number">
+                <img src="../assets/spotify.png">
+            </div>
+
+            <div class="header-title">
+
+                <span>
+                    ANAS' SOUNDTRACK
+                </span>
+
+                <small>
+                    A COLLECTION OF SONGS THAT FEEL LIKE YOU
+                </small>
+
+            </div>
+
+            <div class="header-status">
+
+                <span class="status-dot"></span>
+
+                NOW PLAYING
+
+            </div>
+
+        </header>
+
+
+        <!-- INTRO -->
+
+        <section class="music-intro">
+
+            <span class="intro-label">
+                PRESS PLAY
+            </span>
+
+            <h1>
+                ANZO’S
+                <br>
+                <span>VIBE.</span>
+            </h1>
+
+            <p>
+                These are some of the songs
+                that belong to yours.
+            </p>
+
+        </section>
+
+
+        <!-- PLAYER -->
+
+        <section class="music-player">
+
+
+            <!-- VINYL -->
+
+            <div class="vinyl-container">
+
+                <div class="vinyl-shadow"></div>
+
+                <div class="vinyl">
+
+                    <div class="vinyl-lines"></div>
+
+                    <div class="vinyl-label">
+
+                        <div class="label-inner">
+
+                            <span>
+                                ANAS
+                            </span>
+
+                            <small>
+                                #21
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="vinyl-hole"></div>
+
+                </div>
+
+                <div class="needle">
+
+                    <div class="needle-arm"></div>
+
+                    <div class="needle-head"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SONG INFORMATION -->
+
+            <div class="song-area">
+
+                <div class="playing-label">
+                    NOW PLAYING
+                </div>
+
+                <h2 id="songTitle">
+                    Night Changes
+                </h2>
+
+                <h3 id="songArtist">
+                    One Direction
+                </h3>
+
+                <p id="songAlbum">
+                    Four
+                </p>
+
+
+                <!-- PROGRESS -->
+
+                <div class="progress-area">
+
+                    <span id="currentTime">
+                        0:00
+                    </span>
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill"
+                            id="progressFill">
+                        </div>
+
+                    </div>
+
+                    <span id="duration">
+                        0:00
+                    </span>
+
+                </div>
+
+
+                <!-- CONTROLS -->
+
+                <div class="player-controls">
+
+                    <button
+                        class="control-button"
+                        id="previousButton">
+
+                        ◀◀
+
+                    </button>
+
+                    <button
+                        class="play-button"
+                        id="playButton">
+
+                        ▶
+
+                    </button>
+
+                    <button
+                        class="control-button"
+                        id="nextSongButton">
+
+                        ▶▶
+
+                    </button>
+
+                </div>
+
+
+                <!-- VOLUME -->
+
+                <div class="volume-area">
+
+                    <span>
+                        VOL
+                    </span>
+
+                    <input
+                        type="range"
+                        id="volumeSlider"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.7">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MEMORY -->
+
+        <section class="song-memory">
+
+            <div class="memory-line"></div>
+
+            <div class="memory-content">
+
+                <span class="memory-label">
+                    SONG MEMORY
+                </span>
+
+                <div class="memory-icon">
+                    ♫
+                </div>
+
+                <p id="memoryText">
+                    Some songs don't just remind you
+                    of a moment. They become the moment.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PLAYLIST -->
+
+        <section class="playlist-section">
+
+            <div class="section-heading">
+
+                <span>
+                    01
+                </span>
+
+                <h2>
+                    YOUR PLAYLIST
+                </h2>
+
+                <p>
+                    PRESS A SONG TO PLAY IT
+                </p>
+
+            </div>
+
+
+            <div class="playlist" id="playlist">
+
+
+                <button
+                    class="playlist-song active"
+                    data-index="0">
+
+                    <span class="song-number">
+                        01
+                    </span>
+
+                    <span class="song-mini-icon">
+                        ♫
+                    </span>
+
+                    <span class="playlist-info">
+
+                        <strong>
+                            What Makes You Beautiful
+                        </strong>
+
+                        <small>
+                            One Direction
+                        </small>
+
+                    </span>
+
+                    <span class="song-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="playlist-song"
+                    data-index="1">
+
+                    <span class="song-number">
+                        02
+                    </span>
+
+                    <span class="song-mini-icon">
+                        ♫
+                    </span>
+
+                    <span class="playlist-info">
+
+                        <strong>
+                            Bulletproof Love
+                        </strong>
+
+                        <small>
+                            Pierce The Veil
+
+                        </small>
+
+                    </span>
+
+                    <span class="song-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="playlist-song"
+                    data-index="2">
+
+                    <span class="song-number">
+                        03
+                    </span>
+
+                    <span class="song-mini-icon">
+                        ♫
+                    </span>
+
+                    <span class="playlist-info">
+
+                        <strong>
+                            Starlight
+                        </strong>
+
+                        <small>
+                            Muse 
+                        </small>
+
+                    </span>
+
+                    <span class="song-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="playlist-song"
+                    data-index="3">
+
+                    <span class="song-number">
+                        04
+                    </span>
+
+                    <span class="song-mini-icon">
+                        ♫
+                    </span>
+
+                    <span class="playlist-info">
+
+                        <strong>
+                            Starry Eyes
+                        </strong>
+
+                        <small>
+                            Cigarettes After Sex
+                        </small>
+
+                    </span>
+
+                    <span class="song-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="playlist-song"
+                    data-index="4">
+
+                    <span class="song-number">
+                        05
+                    </span>
+
+                    <span class="song-mini-icon">
+                        ♫
+                    </span>
+
+                    <span class="playlist-info">
+
+                        <strong>
+                            Min Shaf Habibi
+                        </strong>
+
+                        <small>
+                            Jadal
+                        </small>
+
+                    </span>
+
+                    <span class="song-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUOTE -->
+
+        <section class="music-quote">
+
+            <div class="quote-mark">
+                “
+            </div>
+
+            <p>
+                Some vibes just feel like Anzo.
+                <br>
+                Some songs sound exactly like him.
+            </p>
+
+            <span>
+                — FOR ANAS
+            </span>
+
+        </section>
+
+
+        <!-- NEXT -->
+
+        <section class="next-section">
+
+            <div class="next-line"></div>
+
+            <span>
+                THE SOUNDTRACK ENDS HERE...
+            </span>
+
+            <h2>
+                BUT THE MEMORIES
+                <br>
+                ARE JUST STARTING.
+            </h2>
+
+            <button
+                class="next-world-button"
+                id="nextWorldButton">
+
+                ENTER MEMORIES
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <audio id="audioPlayer"></audio>
+
+    <script src="../js/music.js"></script>
+
+</body>
+
+</html>

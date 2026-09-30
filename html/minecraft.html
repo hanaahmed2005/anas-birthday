@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anas' Minecraft World</title>
+
+    <link rel="stylesheet" href="../css/minecraft.css">
+    
+</head>
+
+<body>
+
+    <!-- WORLD -->
+    <main class="minecraft-world">
+
+        <!-- Sky -->
+        <div class="sky"></div>
+
+        <!-- Clouds -->
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+
+        <!-- Sun -->
+        <div class="sun"></div>
+
+        <!-- Mountains -->
+        <div class="mountain mountain-1"></div>
+        <div class="mountain mountain-2"></div>
+        <div class="mountain mountain-3"></div>
+
+        <!-- Trees -->
+        <div class="tree tree-1">
+            <div class="tree-leaves"></div>
+            <div class="tree-trunk"></div>
+        </div>
+
+        <div class="tree tree-2">
+            <div class="tree-leaves"></div>
+            <div class="tree-trunk"></div>
+        </div>
+
+        <div class="tree tree-3">
+            <div class="tree-leaves"></div>
+            <div class="tree-trunk"></div>
+        </div>
+
+
+        <!-- Dirt / Grass Ground -->
+        <div class="ground">
+            
+            <div class="grass-top"></div>
+
+            <div class="dirt-layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+
+        <!-- TOP HUD -->
+        <header class="minecraft-hud">
+
+            <div class="hud-title">
+                <span class="pixel-small">SPECIAL WORLD</span>
+                <h1>ANAS' WORLD</h1>
+            </div>
+
+            <div class="day-counter">
+                <span>DAY</span>
+                <strong>21</strong>
+            </div>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <section class="world-content">
+
+            <div class="welcome-box">
+
+                <p class="world-label">SURVIVAL MODE</p>
+
+                <h2>
+                    WELCOME TO<br>
+                    <span>ANAS' WORLD</span>
+                </h2>
+
+                <div class="pixel-line"></div>
+
+                <p class="birthday-text">
+                    A NEW ADVENTURE HAS SPAWNED...
+                </p>
+
+            </div>
+
+
+            <!-- PLAYER -->
+            <div class="player-section">
+
+                <div class="player-name">
+                    <span>PLAYER</span>
+                    <strong>ANAS</strong>
+                </div>
+
+                <div class="player-stats">
+
+                    <div class="hearts">
+                        <span>♥</span>
+                        <span>♥</span>
+                        <span>♥</span>
+                        <span>♥</span>
+                        <span>♥</span>
+                    </div>
+
+                    <div class="hunger">
+                        <span>◆</span>
+                        <span>◆</span>
+                        <span>◆</span>
+                        <span>◆</span>
+                        <span>◆</span>
+                    </div>
+
+                </div>
+
+
+                <!-- XP -->
+                <div class="xp-section">
+                 <img src="../assets/avatar.png" alt="">
+                    <div class="level-number">
+                        21
+                    </div>
+
+                    <div class="xp-bar">
+                        <div class="xp-fill"></div>
+                    </div>
+
+                    <p>LEVEL 21</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACHIEVEMENT -->
+            <div class="achievement" id="achievement">
+
+                <div class="achievement-icon">
+                    🏆
+                </div>
+
+                <div class="achievement-info">
+
+                    <span>ACHIEVEMENT UNLOCKED</span>
+
+                    <strong>
+                        LEVEL 21 REACHED!
+                    </strong>
+
+                    <small>
+                        ANAS HAS ENTERED A NEW YEAR
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHEST -->
+            <div class="chest-area">
+
+                <p class="chest-hint">
+                    THERE'S SOMETHING INSIDE...
+                </p>
+
+                <button class="chest-button" id="chestButton">
+
+                    <div class="chest-lid"></div>
+
+                    <div class="chest-body">
+
+                        <div class="chest-lock"></div>
+
+                    </div>
+
+                </button>
+
+                <p class="click-text">
+                    CLICK THE CHEST
+                </p>
+
+            </div>
+
+
+            <!-- QUEST -->
+            <div class="quest-box" id="questBox">
+
+                <div class="quest-header">
+                    <span>!</span>
+                    BIRTHDAY QUEST
+                </div>
+
+                <div class="quest-content">
+
+                    <h3>
+                        QUEST: LEVEL 21
+                    </h3>
+
+                    <p>
+                        Your mission is simple:
+                    </p>
+
+                    <strong>
+                        HAVE THE BEST YEAR OF YOUR LIFE.
+                    </strong>
+
+                    <p class="quest-extra">
+                        Explore new worlds.<br>
+                        Make unforgettable memories.<br>
+                        Keep moving forward.
+                    </p>
+
+                    <button id="acceptQuest">
+                        ACCEPT QUEST
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVENTORY
+        <div class="inventory">
+
+            <div class="inventory-slot selected">
+                🎂
+            </div>
+
+            <div class="inventory-slot">
+                🎁
+            </div>
+
+            <div class="inventory-slot">
+                ⭐
+            </div>
+
+            <div class="inventory-slot">
+                💎
+            </div>
+
+            <div class="inventory-slot">
+                🪽
+            </div>
+
+            <div class="inventory-slot">
+                ❤️
+            </div>
+
+            <div class="inventory-slot">
+                🎮
+            </div>
+
+            <div class="inventory-slot">
+                🎵
+            </div>
+
+            <div class="inventory-slot">
+                🔒
+            </div>
+
+        </div> -->
+
+
+        <!-- FINAL MESSAGE -->
+        <div class="final-message" id="finalMessage">
+
+            <div class="final-card">
+
+                <div class="pixel-stars">
+                    ✦ ✦ ✦
+                </div>
+
+                <h2>
+                    QUEST ACCEPTED
+                </h2>
+
+                <p>
+                    Happy 21st Birthday, Anas! 🎂
+                </p>
+
+                <span>
+                    Your next world is waiting...
+                </span>
+
+                <button id="nextWorld">
+                    ENTER NEXT WORLD →
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/minecraft.js"></script>
+
+</body>
+</html>
